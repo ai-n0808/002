@@ -32,12 +32,12 @@ function Home() {
 
     setLoading(true);
     try {
-      const searchResults = await searchMovies(searchQuery);
-      setMovies(searchResults);
+      const searchResult = await searchMovies(searchQuery);
+      setMovies(searchResult);
       setError(null);
     } catch (err) {
-      console.log(err);
-      setError("Failed to search movies...");
+      console.error(err);
+      setError("Failed to search...");
     } finally {
       setLoading(false);
     }
